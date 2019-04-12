@@ -86,7 +86,7 @@ $(function() {
         $('.toppings').text(toppings);
         $('.total').text(newTotal);
 
-        $('.show-details').show();
+        $('.show-order').show('slow');
         console.log(newTotal);
         console.log(newpizza);
         console.log(pizza);

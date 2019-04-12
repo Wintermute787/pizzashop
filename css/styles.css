@@ -1,7 +1,27 @@
+/* Yellow: #feda6a;
+silver: #d4d4dc;
+matteGrey: #393f4d;
+darkSlate: #1d1e22; */
+
+body{
+    background-color: #1d1e22;
+    color: #feda6a;
+    font-family: 'Roboto', sans-serif;
+
+}
+.page-header {
+    background-color:#d4d4dc ;
+    color: #1d1e22;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    height: 100px;
+}
+
 .show-details {
     display: none;
 }
 
-#show-order {
+.show-order {
     display: none;
 }
