@@ -1,6 +1,6 @@
 function Pizza() {
     this.pizza = [];
-    
+    this.total = 0;
 }
 
 
@@ -8,8 +8,27 @@ Pizza.prototype.addItems = function (pizzaItems) {
     this.pizza.push(pizzaItems);
 }
 
-
-
+Pizza.prototype.addTotal = function(pizza){
+    var pizzaItemsArr = Object.values(pizza);
+    console.log(pizzaItemsArr);
+    
+    for(var i = 0; i <= pizzaItemsArr.length; i++){
+        if(pizzaItemsArr[i] ==='large'){
+            this.total += largePrice;
+        }else if(pizzaItemsArr[i] ==='medium'){
+            this.total += mediumPrice;
+        }else if(pizzaItemsArr[i] ==='small'){
+            this.total += smallPrice;
+        }else if(pizzaItemsArr[i] === 'pepperoni'){
+            this.total += pepporni;
+        }else if(pizzaItemsArr[i] ==='sasuage'){
+            this.total += sasuage;
+        }else if(pizzaItemsArr[i] === "pineapple"){
+            this.total += pinapple;
+        }
+    }
+    return this.total;
+}
 
 function PizzaItems(size, toppings) {
     this.size = size,
@@ -42,22 +61,9 @@ $(function() {
         var toppings = $('input:radio[name=topping]:checked').val();
         var newpizza = new PizzaItems(size, toppings);
         pizza.addItems(newpizza);
+        pizza.addTotal(newpizza);
         console.log(newpizza);
-        
-        if(size ==='large'){
-         total += largePrice;
-        }else if(size ==='medium'){
-            total += mediumPrice;
-        }else if(size ==='small'){
-            total += smallPrice;
-        }else if(toppings === 'pepperoni'){
-            total += pepporni;
-        }else if(toppings ==='sasuage'){
-            total += sasuage;
-        }else if(toppings ==='pineapple'){
-            total += pinapple;
-        }
-        console.log(total);
+        console.log(pizza);
         
         
     })
