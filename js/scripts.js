@@ -51,17 +51,43 @@ $(function() {
 
     $('#formOne').submit(function (event) {
         event.preventDefault();
+        var name = $('input#name').val();
+        var email = $('input#email').val();
+        var address1 = $('input#inputAddress').val();
+        var address2 = $('input#inputAddress2').val();
+        var city = $('input#inputCity').val();
+        var state = $('input#inputState').val();
+        var zip = $('input#inputZip').val();
+
+        $('.name').text(name);
+        $('.email').text(email);
+        $('.address1').text(address1);
+        $('.address2').text(address2);
+        $('.city').text(city);
+        $('.state').text(state);
+        $('.zip').text(zip);
+
+        $('.show-details').show('slow');
 
     });
 
-    $('#formTwo').submit(function (event) {
+    $('#formTwo').submit(function(event) {
         event.preventDefault();
-        var total = 0;
+        
+
+        var newTotal = 0;
         var size = $('input:radio[name=size]:checked').val();
         var toppings = $('input:radio[name=topping]:checked').val();
         var newpizza = new PizzaItems(size, toppings);
         pizza.addItems(newpizza);
-        pizza.addTotal(newpizza);
+        var newTotal = pizza.addTotal(newpizza);
+
+        $('.size').text(size);
+        $('.toppings').text(toppings);
+        $('.total').text(newTotal);
+
+        $('.show-details').show();
+        console.log(newTotal);
         console.log(newpizza);
         console.log(pizza);
         
