@@ -10,8 +10,8 @@ body{
 
 }
 .page-header {
-    background-color:#d4d4dc ;
-    color: #1d1e22;
+    background-color:#393f4d;
+    color: #feda6a;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 15px;
@@ -24,4 +24,15 @@ body{
 
 .show-order {
     display: none;
+}
+
+.details-header {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.container-form {
+    border: 2px solid #feda6a;
+    padding: 35px;
+    background-color: #393f4d79;
 }
