@@ -1,6 +1,6 @@
 function Pizza() {
     this.pizza = [];
-    this.total = 0;
+    
 }
 
 
@@ -8,20 +8,8 @@ Pizza.prototype.addItems = function (pizzaItems) {
     this.pizza.push(pizzaItems);
 }
 
-Pizza.prototype.total = function(price){
-    return this.total += price;
-}
 
-Pizza.prototype.addPrice = function(pizza){
-    
-    for(var i = 0; i < pizza.length; i++){
-        console.log('you got here');
-        if(pizzaitems[i].size ==='large'){
-           this.total = total(largePrice);
-        }
-    }
-    return this.total;
-}
+
 
 function PizzaItems(size, toppings) {
     this.size = size,
@@ -39,7 +27,7 @@ var pinapple = 1.50;
 
 
 pizza = new Pizza();
-$(function () {
+$(function() {
 
 
     $('#formOne').submit(function (event) {
@@ -54,8 +42,24 @@ $(function () {
         var toppings = $('input:radio[name=topping]:checked').val();
         var newpizza = new PizzaItems(size, toppings);
         pizza.addItems(newpizza);
-        pizza.addPrice(newpizza);
-        console.log(pizza);
+        console.log(newpizza);
+        
+        if(size ==='large'){
+         total += largePrice;
+        }else if(size ==='medium'){
+            total += mediumPrice;
+        }else if(size ==='small'){
+            total += smallPrice;
+        }else if(toppings === 'pepperoni'){
+            total += pepporni;
+        }else if(toppings ==='sasuage'){
+            total += sasuage;
+        }else if(toppings ==='pineapple'){
+            total += pinapple;
+        }
+        console.log(total);
+        
+        
     })
 
 
